@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+
+  mongo:
+    image: mongo
+
+    restart: always
+
+    ports:
+      - 27017:27017
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: nodmon
+
+    volumes:
+      - nodmon_data:/data/db
+
+  node:
+
+    image: node:lts-alpine3.13
+
+    ports:
+      - 3000:3000
+
+    volumes:
+      - .:/nodmon
+
+    working_dir: /nodmon
+
+    environment:
+      MONGO_URL: mongodb://root:nodmon@mongo:27017/
+
+    command: yarn run start
+    
+volumes:
+  nodmon_data:
