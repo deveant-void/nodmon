@@ -1,16 +1,20 @@
 install dependence
-    yarn install
+
+   -- yarn install
 
 start project
-    yarn start
+
+   -- yarn start
 
 start docker-compose
-    docker-compose up
+
+   --  docker-compose up
 
 config mongo 
-    user : root
-    password: nodmon
-    port: 27017
+
+   -- user : root
+   -- password: nodmon
+   --  port: 27017
 
 endpoint : 
 
