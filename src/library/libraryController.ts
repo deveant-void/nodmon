@@ -1,3 +1,4 @@
+import { BookModel } from "../book/bookSchema";
 import { Request, Response, NextFunction } from "express";
 import { LibraryModel } from "./librarySchema";
 
@@ -51,7 +52,9 @@ export const findAll = async (
 	response: Response,
 	next: NextFunction
 ) => {
-	const result = await LibraryModel.find({}).populate("books");
+	const bookLibrary = await BookModel.find({});
+	const resultLibrary = await LibraryModel.find({}).populate("books");
+	const result = [{ book: bookLibrary }, { library: resultLibrary }];
 	response.json(result);
 };
 

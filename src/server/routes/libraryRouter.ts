@@ -4,7 +4,6 @@ import {
 	remove,
 	update,
     addBook,
-	findAll,
 	findOne,
 } from "../../library/libraryController";
 
@@ -14,6 +13,5 @@ LibraryRouter.post("/", create);
 LibraryRouter.delete("/:id", remove);
 LibraryRouter.put("/:id", update);
 LibraryRouter.put("/book/:id", addBook);
-LibraryRouter.get("/", findAll);
 LibraryRouter.get("/:id", findOne);
 

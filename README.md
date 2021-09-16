@@ -75,8 +75,10 @@ endpoint :
                 book: string = id book
             }
 
-    findAll
-        Method GET http://localhost:3000/library/
-    
      findOne
         Method GET http://localhost:3000/library/{idlibrary}
+    
+
+
+    findAll
+        Method GET http://localhost:3000/
